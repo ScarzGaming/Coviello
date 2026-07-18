@@ -212,6 +212,20 @@ em.it { font-family: var(--display); font-style: italic; letter-spacing: 0; }
   margin-top: .38rem;
   font-weight: 500;
 }
+
+/* Tricolore on the closing letters of the wordmark.
+   The header runs two states, so the flag can't be one fixed set of hexes:
+   over the hero photo it needs brightening to survive the dark image, and on
+   the solid cream header the white letter would disappear entirely — there it
+   falls back to ink so the mark never reads with a hole in it. */
+.tri { transition: color .5s var(--ease); }
+.tri--g { color: #4FBE80; }
+.tri--w { color: #FFFFFF; }
+.tri--r { color: #E8615A; }
+.site-header.is-solid .tri--g { color: #008C45; }
+.site-header.is-solid .tri--w { color: var(--inchiostro); }
+.site-header.is-solid .tri--r { color: #C0392B; }
+
 .nav { display: flex; align-items: center; gap: clamp(1rem, 2.4vw, 2.2rem); }
 .nav a {
   font-size: var(--step--1);
