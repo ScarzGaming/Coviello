@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visit &amp; book — Coviello Restaurant &amp; Wine Bar, Durham</title>
+<meta name="description" content="Book a table at Coviello, 24 Silver Street, Durham DH1 3RD. Open Tuesday to Saturday 10:00–23:00 and Sunday 11:00–23:00. Call 07519 931057.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <a class="brand" href="index.html">Coviello<small>Restaurant &amp; Wine Bar</small></a>
+  <nav class="nav" id="primary-nav" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">Our story</a>
+    <a href="contact.html" aria-current="page">Visit</a>
+  </nav>
+  <a class="btn header-cta" href="#book"><span>Book a table</span></a>
+  <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main id="main">
+
+  <section class="banner">
+    <div class="shutterlight" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="eyebrow">Silver Street, Durham</p>
+      <h1 class="display">Visit us</h1>
+      <p>Join us in our Italian temple — from home cooked food, coffee and fine wines to a bottle that lasts the evening.</p>
+    </div>
+  </section>
+
+  <section class="section" id="book">
+    <div class="wrap contact-grid">
+
+      <div class="reveal">
+        <p class="eyebrow">Request a table</p>
+        <h2 class="section-title display">Tell us when, and how many.</h2>
+        <p class="lede" style="margin-bottom:2.2rem">Fill this in and it opens a pre-written email to the restaurant. We'll confirm by return — usually the same day.</p>
+
+        <form class="form" id="booking-form" novalidate>
+          <div class="field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+          </div>
+          <div class="grid-2" style="gap:1.1rem">
+            <div class="field">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" required>
+            </div>
+            <div class="field">
+              <label for="time">Time</label>
+              <input type="time" id="time" name="time" required>
+            </div>
+          </div>
+          <div class="field field--select">
+            <label for="guests">Guests</label>
+            <select id="guests" name="guests">
+              <option>1</option><option selected>2</option><option>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7</option><option>8</option>
+              <option>More than 8</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Anything we should know</label>
+            <textarea id="message" name="message" placeholder="Allergies, a birthday, a wine you'd like us to open…"></textarea>
+          </div>
+          <button class="btn" type="submit"><span>Send request</span> <span class="arrow" aria-hidden="true">→</span></button>
+          <p class="form-note">Prefer to speak to someone? Call <a href="tel:+447519931057">07519 931057</a>.</p>
+        </form>
+      </div>
+
+      <div class="reveal" data-delay="1">
+        <div class="contact-block">
+          <h3>Where</h3>
+          <address>
+            24 Silver Street<br>
+            Durham<br>
+            DH1 3RD
+          </address>
+        </div>
+
+        <div class="contact-block">
+          <h3>Get in touch</h3>
+          <p><a class="big-link display" href="tel:+447519931057">07519 931057</a></p>
+          <p><a href="mailto:coviellobusiness@gmail.com">coviellobusiness@gmail.com</a></p>
+        </div>
+
+        <div class="contact-block">
+          <h3>Opening times</h3>
+          <ul class="detail-list">
+            <li><span class="day">Tuesday – Saturday</span><span class="time">10:00 – 23:00</span></li>
+            <li><span class="day">Sunday</span><span class="time">11:00 – 23:00</span></li>
+            <li><span class="day">Monday</span><span class="time">Closed</span></li>
+          </ul>
+        </div>
+
+        <div class="contact-block">
+          <a class="map-card" href="https://maps.google.com/?q=24+Silver+Street,+Durham+DH1+3RD" target="_blank" rel="noopener">
+            <span class="map-card__grid" aria-hidden="true"></span>
+            <span class="map-card__pin" aria-hidden="true"></span>
+            <span class="map-card__body">
+              <h3 class="display">Halfway up Silver Street</h3>
+              <p>Two minutes from Durham Market Place, just before the bridge.</p>
+              <span class="map-card__cta">Open in Maps <span class="arrow" aria-hidden="true">→</span></span>
+            </span>
+          </a>
+        </div>
+
+        <div class="contact-block">
+          <h3>Follow along</h3>
+          <p>Chef's weekly specials and wine tasting dates go out here first.</p>
+          <p>
+            <a href="https://www.instagram.com/coviellowinebar/" target="_blank" rel="noopener">Instagram</a>
+            &nbsp;·&nbsp;
+            <a href="https://www.facebook.com/coviellocoffeebarber/" target="_blank" rel="noopener">Facebook</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand display">Coviello</p>
+        <p>Italian restaurant and wine bar in the centre of Durham. Family run since 2019.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/coviellowinebar/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/coviellocoffeebarber/" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <h4>Find us</h4>
+        <ul>
+          <li>24 Silver Street</li>
+          <li>Durham DH1 3RD</li>
+          <li><a href="tel:+447519931057">07519 931057</a></li>
+          <li><a href="mailto:coviellobusiness@gmail.com">coviellobusiness@gmail.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">Our story</a></li>
+          <li><a href="contact.html">Visit &amp; book</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span data-year>2026</span> Coviello Restaurant &amp; Wine Bar</span>
+      <span>Tue–Sat 10:00–23:00 · Sun 11:00–23:00</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
