@@ -149,28 +149,6 @@
     reflow = setTimeout(initAllRibbons, 250);
   });
 
-  /* ---- Booking form -> pre-filled email ---- */
-  var form = document.getElementById('booking-form');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var data = new FormData(form);
-      var subject = 'Table request — ' + (data.get('name') || '');
-      var lines = [
-        'Name: ' + (data.get('name') || ''),
-        'Phone: ' + (data.get('phone') || ''),
-        'Date: ' + (data.get('date') || ''),
-        'Time: ' + (data.get('time') || ''),
-        'Guests: ' + (data.get('guests') || ''),
-        '',
-        (data.get('message') || '')
-      ];
-      window.location.href = 'mailto:coviellobusiness@gmail.com'
-        + '?subject=' + encodeURIComponent(subject)
-        + '&body=' + encodeURIComponent(lines.join('\n'));
-    });
-  }
-
   /* ---- Year ---- */
   document.querySelectorAll('[data-year]').forEach(function (el) {
     el.textContent = new Date().getFullYear();
