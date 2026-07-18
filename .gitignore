@@ -6,3 +6,10 @@ assets/SaveClip.App_*
 # anything committed here is publicly fetchable — keep these out of the repo.
 HANDOFF.md
 .claude/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
