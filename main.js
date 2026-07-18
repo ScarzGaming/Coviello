@@ -39,17 +39,20 @@
   }
 
   /* ---- Opening: a warm veil that dissolves ---- */
+  /* Reduced motion still gets an opening, it is just a cross-fade and it is
+     over in about a third of the time — see the prefers-reduced-motion block
+     in styles.css. Tearing the curtain out entirely meant anyone with the OS
+     setting on, which on Windows includes battery saver, never saw it. */
   var curtain = document.querySelector('.curtain');
   if (curtain) {
-    if (reduced) {
-      curtain.remove();
-    } else {
-      document.documentElement.classList.add('is-loading');
-      window.setTimeout(function () {
-        document.documentElement.classList.remove('is-loading');
-        if (curtain.parentNode) curtain.parentNode.removeChild(curtain);
-      }, 2100);
-    }
+    document.documentElement.classList.add('is-loading');
+    window.setTimeout(function () {
+      document.documentElement.classList.remove('is-loading');
+      if (curtain.parentNode) curtain.parentNode.removeChild(curtain);
+      /* Must outlast the veil fade itself: .4s delay + .55s duration = .95s
+         under reduced motion, .85s + 1.25s under full motion. Cutting it
+         early removes the element mid fade and the page pops in. */
+    }, reduced ? 1000 : 2100);
   }
 
   /* ---- Scroll reveal ---- */

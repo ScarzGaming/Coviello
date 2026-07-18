@@ -1283,10 +1283,39 @@ html.is-loading, html.is-loading body { overflow: hidden; }
   }
 }
 
+/* Reduced motion gets the opening as a plain cross-fade rather than nothing.
+   Opacity is not what provokes vestibular symptoms — translation, scale, blur
+   and parallax are — so those are stripped and the fade is kept, at roughly a
+   third of the running time. */
 @media (prefers-reduced-motion: reduce) {
-  .curtain { display: none; }
-  .hero__media img,
-  .hero h1, .hero__meta, .hero__actions, .hero .cue,
-  .site-header { animation: none !important; opacity: 1 !important; filter: none !important; transform: none !important; }
-  html.is-loading, html.is-loading body { overflow: auto; }
+  /* !important throughout: the blanket rule above flattens every duration to
+     .001ms via the universal selector, which would make this instantaneous. */
+  .curtain {
+    display: grid;
+    animation: veilFade .55s .4s ease forwards !important;
+  }
+  .curtain__mark {
+    animation: fadeIn .4s ease forwards,
+               fadeOut .3s .45s ease forwards !important;
+    transform: none !important;
+    filter: none !important;
+    letter-spacing: .42em !important;
+  }
+
+  /* The photograph settles instantly; no slow scale */
+  .hero__media img { animation: none !important; transform: none !important; }
+
+  .hero h1, .hero__meta, .hero__actions, .hero .cue, .site-header {
+    animation: fadeIn .45s ease both !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  .hero h1       { animation-delay: .8s !important; }
+  .hero__meta    { animation-delay: .87s !important; }
+  .hero__actions { animation-delay: .94s !important; }
+  .hero .cue     { animation-delay: 1s !important; }
+  .site-header   { animation-delay: .94s !important; }
 }
+
+@keyframes veilFade { to { opacity: 0; visibility: hidden; } }
+@keyframes fadeOut  { to { opacity: 0; } }
