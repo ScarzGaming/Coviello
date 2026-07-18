@@ -1,3 +1,8 @@
 # Raw Instagram exports. The curated, resized versions live in assets/ under
 # real filenames; these originals are kept locally as the source material.
 assets/SaveClip.App_*
+
+# Working notes and local tooling. The Worker serves this directory as-is, so
+# anything committed here is publicly fetchable — keep these out of the repo.
+HANDOFF.md
+.claude/
