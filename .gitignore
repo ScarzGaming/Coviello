@@ -1,0 +1,3 @@
+# Raw Instagram exports. The curated, resized versions live in assets/ under
+# real filenames; these originals are kept locally as the source material.
+assets/SaveClip.App_*

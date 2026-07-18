@@ -51,7 +51,10 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
-img { max-width: 100%; display: block; }
+/* height:auto is load bearing. The width/height attributes on every <img> map
+   to presentational hints, so without this the attribute height wins and every
+   aspect-ratio rule below is silently ignored. */
+img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
 h1, h2, h3, h4 { margin: 0; font-weight: 400; line-height: 1.05; }
 p { margin: 0 0 1em; }
@@ -507,6 +510,31 @@ em.it { font-family: var(--display); font-style: italic; letter-spacing: 0; }
 .feature__body h2 { font-family: var(--display); font-size: var(--step-3); letter-spacing: -0.03em; margin-bottom: 1.2rem; }
 .feature__body p { max-width: 46ch; }
 .section--dark .feature__body p { color: rgba(240,233,218,.85); }
+
+/* Portrait sources need a portrait window. The default feature ratio goes
+   wide at larger viewports, which beheads a standing bottle. */
+.feature--tall .feature__media img { aspect-ratio: 4 / 5; }
+
+/* ---------- Plates: the specials grid ----------
+   Deliberately loose. Two up on desktop with a lot of air, because a tight
+   grid of many small plates reads busy, and busy reads cheap. */
+.plates {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+@media (min-width: 760px) {
+  .plates { grid-template-columns: 1fr 1fr; }
+}
+.plate { margin: 0; overflow: hidden; }
+.plate img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.2s var(--ease);
+}
+.plate:hover img { transform: scale(1.04); }
 
 /* ---------- Detail list (opening times etc.) ---------- */
 .detail-list { display: grid; gap: 0; }
